@@ -1,0 +1,16 @@
+{
+  "name": "amsoldier-scrolly",
+  "version": "1.0.0",
+  "description": "scrollytelling application for the american soldier project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chase Dawson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "intersection-observer": "^0.12.0",
+    "scrollama": "^2.2.2"
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v6.min.js"></script> 
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="js/story.js"></script>
+
+    <title>Scrollytelling Example</title>
+    <style>
+
+      .filler {
+        height: 20rem;
+        text-align: center;
+      }
+
+      #scrolly-side .scrolly {
+        display: flex;
+        max-width: 90rem;
+        margin: 3rem auto;
+        padding: 1rem;
+
+      }
+
+      #scrolly-side .scrolly > * {
+        flex: 1;
+      }
+
+      article {
+        padding-right: 1rem;
+        max-width: 30rem;
+      }
+
+      article .step {
+        min-height: 30vh;
+        margin-bottom: 100vh;
+        background-color: #5b5b5b;
+        transition: background-color 250ms ease-in-out;
+        padding: 10px;
+      }
+
+      article .step p.first {
+        margin: 0;
+      }
+
+      article .step p {
+        font-size: 18px;
+        font-family: Helvetica, sans-serif;
+        color: white
+      }
+
+      article .step :last-of-type {
+        margin-bottom: 0;
+      }
+
+      article .step.is-active {
+        background-color: teal;
+      }
+
+      article .step.first {
+        margin-top: 50%;
+      }
+
+      .title {
+        width: 100vw;
+        height: 100vh;
+        margin-bottom: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: none;
+        background-color: cornflowerblue;
+      }
+
+      .title h1 {
+        font-family: Helvetica, sans-serif;
+        font-size: 42px;
+        text-align: center;
+        color: white;
+      }
+
+      .title h3 {
+        font-family: Helvetica, sans-serif;
+        font-size: 24px;
+        text-align: center;
+        color: white;
+      }
+
+      figure.sticky {
+        position: sticky;
+        width: 100%;
+        height: 75vh;
+        margin: 0;
+        top: 18.75vh;
+        left: 0;
+      }
+
+      body { 
+        margin: 0;
+      }
+    </style>
+    
+</head>
+<body onload="init()">
+    <main>
+
+      <section class="title">
+        <h1>Fascism, at Home and Abroad, During World War II</h1>
+      </section>
+
+      <section id="scrolly-side">
+        <div class="scrolly">
+          <!-- step/text container -->
+          <article>
+            <div class="step first" data-step="1">
+              <p class="first">Since the attack on Pearl Harbor on December 7th, 1941, the United States Army had been conducting "attitude surveys" to study and report on troop morale.</p>
+              <p>This work analyzes approximately 7,800 of responses to several surveys conducting during World War II. Each circle to the right represents a bundle of 10 responses.</p>
+            </div>
+            <div class="step" data-step="2">
+                <p class="first">Of the many digitized surveys, we focus on Survey 32N, Survey 32W, and Survey 144.</p>
+            </div>
+            <div class="step" data-step="3">
+                <p class="first">Survey 32 aimed to understand internal race relations and was administered to both Black and white soldiers through Survey 32N and Survey 32W, respectively. Survey 144 sought to capture Black soliders' perceptions of post-war opportunities and subsequently was administered solely to Black soldiers.</p>
+            </div>
+            <div class="step" data-step="4">
+                <p>STEP 4</p>
+            </div>
+          </article>
+
+          <!-- graphic container -->
+          <figure class="sticky">
+            <!-- actual graphic/chart -->
+            <div class="chart">
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="filler">
+        <p>End</p>
+      </section>
+    </main>
+</body>
+</html>
